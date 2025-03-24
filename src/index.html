@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ترجمان</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Importing Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>ترجمان</h1>
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <div class="text-input">
+                <textarea class="from-text" placeholder="أدخل النص"></textarea>
+                <textarea class="to-text" placeholder="النص المترجم" readonly disabled></textarea>
+                <i class="fas fa-copy"></i>
+            </div>
+            <ul class="controls">
+                <li id="from" class="row from">
+                    <select></select>
+                </li>
+                <li id="to" class="row to">
+                    <select></select>
+                </li>
+            </ul>
+        </div>
+        <button class="translate">
+            <span>ترجم</span>
+            <div class="spinner"></div>
+        </button>
+    </div>
+
+    <script src="scripts/main.js"></script>
+
+</body>
+</html>
