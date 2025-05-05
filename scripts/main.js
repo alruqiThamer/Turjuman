@@ -47,6 +47,12 @@ icons.forEach(icon => {
     icon.addEventListener("click", ({ target }) => {
         if (target.classList.contains("fa-copy")) {
             navigator.clipboard.writeText(toText.value);
+            // Add animation class
+            target.classList.add('copied');
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                target.classList.remove('copied');
+            }, 500);
         }
     });
 });

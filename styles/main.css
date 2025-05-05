@@ -8,6 +8,22 @@
   font-family: 'Rubik', sans-serif;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
 body {
     display : flex;
     align-items: center;
@@ -23,6 +39,7 @@ header {
     right: 20px;
     text-align: center;
     color: #ffffff;
+    animation: fadeIn 1s ease-out;
 }
 
 .container {
@@ -31,6 +48,7 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .wrapper .text-input{
@@ -47,6 +65,11 @@ header {
     border: none;
     outline: none;
     background: none;
+    transition: all 0.3s ease;
+}
+
+.text-input textarea:focus {
+    box-shadow: 0 0 10px rgba(203, 106, 223, 0.2);
 }
 
 .text-input .to-text {
@@ -55,16 +78,25 @@ header {
     padding: 10px;
     margin-top: 10px;
     border-right: 1px solid #bdacc0;
+    animation: typing 0.5s steps(40, end);
 }
+
 .text-input i {
     position: absolute;
     bottom: 10px;
     left: 10px;
     color: #bdacc0;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .text-input i:hover {
+    color: #cb6adf;
+    transform: scale(1.1);
+}
+
+.text-input i.copied {
+    animation: pulse 0.5s ease;
     color: #cb6adf;
 }
 
@@ -84,6 +116,11 @@ header {
     outline: none;
     background: none;
     font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.controls .row select:hover {
+    color: #cb6adf;
 }
 
 .container button {
@@ -98,13 +135,18 @@ header {
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .container button:hover {
     transform: translateY(-5px); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 15px 25px rgba(203, 106, 223, 0.3); 
+    background: #d47ae8;
+}
+
+.container button:active {
+    transform: translateY(-2px);
 }
 
 .container button .spinner {
